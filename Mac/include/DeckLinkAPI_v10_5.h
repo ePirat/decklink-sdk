@@ -24,38 +24,23 @@
 ** DEALINGS IN THE SOFTWARE.
 ** -LICENSE-END-
 */
-/* DeckLinkAPI_v10_5.idl */
 
-/* Enum BMDDeckLinkConfigurationID - DeckLink Configuration ID */
+#ifndef BMD_DECKLINKAPI_v10_5_H
+#define BMD_DECKLINKAPI_v10_5_H
 
-typedef [v1_enum] enum	_BMDDeckLinkAttributeID_v10_5 {
+#include "DeckLinkAPI.h"
+
+// Type Declarations
+
+/* Enum BMDDeckLinkAttributeID - DeckLink Attribute ID */
+
+typedef uint32_t BMDDeckLinkAttributeID_v10_5;
+enum _BMDDeckLinkAttributeID_v10_5 {
 
     /* Integers */
 
     BMDDeckLinkDeviceBusyState_v10_5                             = /* 'dbst' */ 0x64627374,
-
-} BMDDeckLinkAttributeID_v10_5;
-
-// Forward Declarations
-
-interface IDeckLinkEncoderConfiguration_v10_5;
-
-/* Interface IDeckLinkEncoderConfiguration_v10_5 - DeckLink Encoder Configuration interface. Obtained from IDeckLinkEncoderInput */
-
-[
-    object,
-    uuid(67455668-0848-45DF-8D8E-350A77C9A028),
-    local, 
-    helpstring("DeckLink Encoder Configuration interface. Obtained from IDeckLinkEncoderInput")
-] interface IDeckLinkEncoderConfiguration_v10_5 : IUnknown
-{
-    HRESULT SetFlag([in] BMDDeckLinkEncoderConfigurationID cfgID, [in] BOOL value);
-    HRESULT GetFlag([in] BMDDeckLinkEncoderConfigurationID cfgID, [out] BOOL *value);
-    HRESULT SetInt([in] BMDDeckLinkEncoderConfigurationID cfgID, [in] LONGLONG value);
-    HRESULT GetInt([in] BMDDeckLinkEncoderConfigurationID cfgID, [out] LONGLONG *value);
-    HRESULT SetFloat([in] BMDDeckLinkEncoderConfigurationID cfgID, [in] double value);
-    HRESULT GetFloat([in] BMDDeckLinkEncoderConfigurationID cfgID, [out] double *value);
-    HRESULT SetString([in] BMDDeckLinkEncoderConfigurationID cfgID, [in] BSTR value);
-    HRESULT GetString([in] BMDDeckLinkEncoderConfigurationID cfgID, [out] BSTR *value);
-    HRESULT GetDecoderConfigurationInfo([out] void *buffer, [in] long bufferSize, [out] long *returnedSize);
 };
+
+#endif /* defined(BMD_DECKLINKAPI_v10_5_H) */
+
